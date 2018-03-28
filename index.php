@@ -26,7 +26,7 @@ echo "Connected successfully";
 ?>
         <br>
         <?php
-        echo 'alguma coisa';
+        echo 'Hello World';
         ?>
     </body>
 </html>
