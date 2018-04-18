@@ -23,8 +23,11 @@ and open the template in the editor.
         </style>
     </head>
     <body>
+        <?php
+include('DBconnec.php');?>
 <div class="bgimg w3-display-container w3-text-purple">
   <div class="w3-display-middle w3-jumbo">
+      <p><span class="error"><?php $error_message ?></span></p>
       <h1>logo</h1>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
@@ -76,9 +79,10 @@ and open the template in the editor.
       <h1>Registro</h1>
     </div>
     <div class="w3-center w3-card-4 w3-padding-16">
+       
       <p>Faça seu registo Gameet aqui!</p>
       <div class="w3-row">
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
+      <form method="post" action="insert.php">
           <div class="w3-half w3-text-purple">
               <h4 class="w3-left"><b>Nome:</b></h4>
               <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="nome" type="text" placeholder="Insira seu nome aqui">
@@ -89,14 +93,43 @@ and open the template in the editor.
           </div>
           <div class="w3-half w3-text-purple">
               <h4 class="w3-left"><b>Usuário:</b></h4>
-              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="usarname" type="text" placeholder="Insira seu usuário aqui">
+              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="username" type="text" placeholder="Insira seu usuário aqui">
           </div>
           <div class="w3-half w3-text-purple">
               <h4 class="w3-left"><b>Senha:</b></h4>
               <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="password" type="password" placeholder="Insira sua senha aqui">
           </div>
+          <div class="w3-half w3-text-purple">
+              <h4 class="w3-left"><b>Gênero:</b></h4>
+              <select class="w3-select w3-left w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="gender">
+              <option value="" disabled selected>Escolha seu gênero</option>
+              <option value="masc">Masculino</option>
+              <option value="fem">Feminino</option>
+              <option value="outr">Outro</option>
+              </select>
           </div>
-          <div class="w3-center w3-padding-16"><button class="w3-button w3-purple w3-round-xxlarge" style="width:50%" type="submit">LOGAR</button></div>
+          <div class="w3-half w3-text-purple">
+              <h4 class="w3-left"><b>Repitir senha:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="password_repeat" type="password" placeholder="Insira sua senha novamente aqui">
+          </div>
+          <div class="w3-half w3-text-purple">
+              <h4 class="w3-left"><b>CEP:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:95%" name="cep" type="text" placeholder="Insira seu CEP aqui">
+          </div>
+          <div class="w3-half w3-text-purple">
+              <h4 class="w3-left"><b>Endereço:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="enderecotxt" type="text" placeholder="Insira seu endereço aqui">
+          </div>
+          <div class="w3-half w3-text-purple">
+              <h4 class="w3-left"><b>Número:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:85%" name="endereconum" type="text" placeholder="Insira o número da sua casa aqui">
+          </div>
+          <div class="w3-half w3-text-purple">
+              <h4 class="w3-left"><b>Telefone:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="tel" type="text" placeholder="Insira seu telefone aqui">
+          </div>
+          </div>
+          <div class="w3-center w3-padding-16"><button class="w3-button w3-purple w3-round-xxlarge" style="width:50%" type="submit">Registrar</button></div>
       </form>
     </div>
   </div>
