@@ -1,28 +1,17 @@
 <?php
-include('DBconnec.php');
+include ('tratamento.php');
 $error_message="";
-$endereco = "";
 
-$_POST['enderecotxt'] . ', ' . $_POST['endereconum'] = $endereco;
-
-
-		if($_POST['password'] != $_POST['password_repeat'])
+		if($senhaUser != $senhaUser2)
 		{
 		    //Password Matching Validation 
-		    $error_message = "Senha não está certa"; 
+		    $error_message = "As senhas não correspondem"; 
 		}
 		else
 		{
-		    $result = $conn->prepare("SELECT * FROM tb_user where login_user=?");
+		    $sqlLogin = "SELECT * FROM tb_user WHERE login_user= '$loginUser'";
 
-		    // Bind the variables to the parameter as strings.
-		    $result->bind_param('s', $_POST['username']);
-
-		    // Execute the prepared statement.
-		    $result->execute();
-
-		    // Gets a result set from a prepared statement.
-		    $result = $result->get_result();
+		    $result = $conn->query($sqlLogin);
 
 		    if($result->num_rows > 0)
 		    {
@@ -30,17 +19,14 @@ $_POST['enderecotxt'] . ', ' . $_POST['endereconum'] = $endereco;
 		    }
 		    else
 		    {
-			 if ($data=$conn->prepare("INSERT INTO tb_user (nome_user,login_user,senha_user,endereco_user,email_user,posicao_user,cep_user,user_gender,user_telefone) VALUES(?,?,?,?,?,?,?,?,?)"))
+			 if ($sqlInsert = "INSERT INTO tb_user (nome_user,login_user,senha_user,endereco_user,email_user,cep_user,user_gender,user_telefone) VALUES('$name','$loginUser','$senhaUser','$endereco','$email','$cep','$gender','$tel')")
 			 {
-			     // Bind the variables to the parameter as strings. 
-		    	     $data->bind_param("sssssssss", $_POST['nome'], $_POST['username'], $_POST['password'], $endereco, $_POST['email'], '1', $_POST['cep'], $_POST['gender'], $_POST['tel']);
-		 
-		    	     // Execute the prepared statement.
-		    	     $data->execute();
-		 
-		    	     // Close the prepared statement.
-		    	     $data->close();
-			     header("location: index.php");
+			     if ($conn->query($sqlInsert) === TRUE) {
+                            echo "New record created successfully";
+                                } else {
+                                    echo "Error: " . $sqlInsert . "<br>" . $conn->error;
+                                        }
+			     //header("location: index.php");
 		         }
 		         else
 		         {

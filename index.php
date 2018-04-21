@@ -93,7 +93,7 @@ include('DBconnec.php');?>
           </div>
           <div class="w3-half w3-text-purple">
               <h4 class="w3-left"><b>Usuário:</b></h4>
-              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="username" type="text" placeholder="Insira seu usuário aqui">
+              <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" style="width:90%" name="username2" type="text" placeholder="Insira seu usuário aqui">
           </div>
           <div class="w3-half w3-text-purple">
               <h4 class="w3-left"><b>Senha:</b></h4>
@@ -134,6 +134,6 @@ include('DBconnec.php');?>
     </div>
   </div>
 </div>
-
+<?php $conn->close() ?>
     </body>
 </html>

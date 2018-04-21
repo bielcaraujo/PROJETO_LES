@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="w3-bar w3-purple w3-border w3-padding">
-    <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" style="width: 300px;" placeholder="Pesquisa pessoas, jogos, etc...">
+    <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" style="width: 300px;" placeholder="Pesquisar pessoas, jogos, etc...">
     <a href="#" class="w3-bar-item w3-button" ><i class="fa fa-search"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-mobile w3-right">Sair</a>
     <a href="#" class="w3-bar-item w3-button w3-mobile w3-right">Ranking</a>
@@ -28,7 +28,7 @@
   </div>
       
   <div class="w3-col s9 w3-center">
-   <div class="w3-card-4 w3-white" style="width:30%" style="padding:10px>
+   <div class="w3-card-4 w3-white" style="width:30%" style="padding:10px">
 
     <div class="w3-container w3-center">
       <h3>Friend Request</h3>
