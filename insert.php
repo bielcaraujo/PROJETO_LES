@@ -1,5 +1,8 @@
+<?php require_once 'config.php'; ?>	
+<?php require_once DBAPI; ?>
+<?php require_once TRATAMENTOREGISAPI?>
 <?php
-include ('tratamento.php');
+$conn = open_database();
 $error_message="";
 
 		if($senhaUser != $senhaUser2)

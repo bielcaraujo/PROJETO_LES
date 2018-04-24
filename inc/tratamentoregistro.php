@@ -1,5 +1,4 @@
 <?php
-include('DBconnec.php');
 $name = $loginUser = $senhaUser = $senhaUser2 = $email = $gender = $cep = $tel = $endereco = "";
  $endereco = $_POST['enderecotxt'] . ', ' . $_POST['endereconum'];
 

@@ -23,8 +23,16 @@ and open the template in the editor.
         </style>
     </head>
     <body>
+        <?php require_once 'config.php'; ?>	
+        <?php require_once DBAPI; ?>
         <?php
-include('DBconnec.php');?>
+        $db = open_database();
+        if ($db) {
+            echo '<h1>Banco de Dados Conectado!</h1>';
+        }  else {
+            echo '<h1>ERRO: Não foi possível Conectar!</h1>';
+        }
+        ?>
 <div class="bgimg w3-display-container w3-text-purple">
   <div class="w3-display-middle w3-jumbo">
       <p><span class="error"><?php $error_message ?></span></p>
@@ -134,6 +142,5 @@ include('DBconnec.php');?>
     </div>
   </div>
 </div>
-<?php $conn->close() ?>
     </body>
 </html>
