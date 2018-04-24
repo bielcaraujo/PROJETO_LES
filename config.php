@@ -30,5 +30,11 @@ if (!defined('DBAPI'))
 /*Caminho para o arquivo de tratamento de entrada para o registro */
 if (!defined('TRATAMENTOREGISAPI'))
     define('TRATAMENTOREGISAPI', ABSPATH . 'inc/tratamentoregistro.php');
+
+/**Caminho para o arquivo de tratamento de entrada para o login **/
+if (!defined('TRATAMENTOLOGINAPI'))
+    define('TRATAMENTOLOGINAPI', ABSPATH . 'inc/tratamentologin.php');
+/*Caminho pro template da header */
+define('HEADER_TEMPLATE', ABSPATH . 'inc/header.php');
     
 ?>

@@ -70,7 +70,7 @@ and open the template in the editor.
     </div>
     <div class="w3-center w3-card-4 w3-padding-16">
       <p>Acesse sua conta Gameet!<p>
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
+      <form method="post" action="login.php">
           <h4 class="w3-text-purple"><b>Usuário</b></h4>
             <div class="w3-row w3-section w3-text-purple">
                 <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
@@ -82,7 +82,7 @@ and open the template in the editor.
           <div class="w3-row w3-section w3-text-purple">
                 <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-key"></i></div>
                 <div class="w3-rest">
-          <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" type="text" placeholder="Senha" required name="password">
+          <input class="w3-input w3-padding-16 w3-border w3-border-purple w3-round-xxlarge" type="password" placeholder="Senha" required name="password">
                           </div>
             </div>
           <p><button class="w3-button w3-purple w3-round-xxlarge" style="width:50%" type="submit">LOGAR</button></p>

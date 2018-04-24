@@ -1,4 +1,9 @@
-
+<?php
+    session_start();
+    $logado = $_SESSION['login'];
+?>
+<?php require_once 'config.php'; ?>	
+<?php require_once DBAPI; ?>
 <!DOCTYPE html>
 <html>
 <head>  
@@ -7,18 +12,13 @@
     <title></title>  
 </head>
 <body>
-  <div class="w3-bar w3-purple w3-border w3-padding">
-    <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" style="width: 300px;" placeholder="Pesquisar pessoas, jogos, etc...">
-    <a href="#" class="w3-bar-item w3-button" ><i class="fa fa-search"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-mobile w3-right">Sair</a>
-    <a href="#" class="w3-bar-item w3-button w3-mobile w3-right">Ranking</a>
-    </div>  
+<?php include(HEADER_TEMPLATE); ?>
 <div class="w3-row">
   <div class="w3-col s3 w3-center w3-purple"><img style="width: 40%;" src="nah.png">
       </br>
     <div class="w3-panel w3-white">
   <h3 class="w3-opacity">
-  <b>Nome: Nah</b></h3>
+  <b>Nome: <?php echo $logado;?></b></h3>
   <h4 class="w3-opacity"><b>3000 anos</b></h4></b>
   <h5>Jogos:</h5>
   <h6>league of legends</h6>
