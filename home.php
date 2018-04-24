@@ -9,7 +9,17 @@
 <head>  
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title></title>  
+    <title>Home</title> 
+    <style>
+        body,h1,h5 {font-family: "Raleway", sans-serif}
+        body, html {height: 100%}
+        .bgimg {
+            background-color: white;
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
 <?php include(HEADER_TEMPLATE); ?>
