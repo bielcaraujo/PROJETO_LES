@@ -1,3 +1,6 @@
+<?php session_start();?>
+<?php require_once 'config.php'; ?>	
+<?php require_once DBAPI; ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -23,19 +26,28 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        <?php require_once 'config.php'; ?>	
-        <?php require_once DBAPI; ?>
         <?php
         $db = open_database();
-        if ($db) {
-            echo '<h1>Banco de Dados Conectado!</h1>';
-        }  else {
-            echo '<h1>ERRO: Não foi possível Conectar!</h1>';
-        }
         ?>
 <div class="bgimg w3-display-container w3-text-purple">
+    <?php if ($_SESSION["error_message"] != "") {
+          if ($_SESSION["error_color"] != "") { ?>
+            <div class="w3-panel w3-green w3-display-topmiddle">
+            <span onclick="this.parentElement.style.display='none'"
+            class="w3-button w3-green w3-large w3-display-topright">&times;</span>
+            <h4> Sucesso!</h4>
+            <p><?php echo $_SESSION["error_message"] ?></p>
+            </div>
+      <?php }else {?>
+            <div class="w3-panel w3-red w3-display-topmiddle">
+            <span onclick="this.parentElement.style.display='none'"
+            class="w3-button w3-red w3-large w3-display-topright">&times;</span>
+            <h4> Erro!</h4>
+            <p><?php echo $_SESSION["error_message"] ?></p>
+            </div>
+      <?php }?>
+      <?php }?>
   <div class="w3-display-middle w3-jumbo">
-      <p><span class="error"><?php $error_message ?></span></p>
       <h1>logo</h1>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
@@ -49,7 +61,7 @@ and open the template in the editor.
   </div>
 </div>
 
-<!-- Menu Modal -->
+<!-- Login Modal -->
 <div id="menu" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-purple w3-display-container">
@@ -144,3 +156,4 @@ and open the template in the editor.
 </div>
     </body>
 </html>
+<?php $_SESSION["error_message"] = ""; $_SESSION["error_color"] = ""; ?>

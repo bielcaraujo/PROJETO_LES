@@ -1,14 +1,16 @@
+<?php session_start();?>
 <?php require_once 'config.php'; ?>	
 <?php require_once DBAPI; ?>
 <?php require_once TRATAMENTOREGISAPI?>
+<?php $_SESSION["error_message"] = ""; $_SESSION["error_color"] = ""; ?>
 <?php
 $conn = open_database();
-$error_message="";
+$error_id=0;
 
 		if($senhaUser != $senhaUser2)
 		{
 		    //Password Matching Validation 
-		    $error_message = "As senhas não correspondem"; 
+		    $error_id = 1; 
 		}
 		else
 		{
@@ -18,10 +20,11 @@ $error_message="";
 
 		    if($result->num_rows > 0)
 		    {
-		        $error_message = "Esse usuário já está em uso";
+		        $error_id = 2;
+                        header("location: index.php");
 		    }
 		    else
-		    {
+		    {   
 			 if ($sqlInsert = "INSERT INTO tb_user (nome_user,login_user,senha_user,endereco_user,email_user,cep_user,user_gender,user_telefone) VALUES('$name','$loginUser','$senhaUser','$endereco','$email','$cep','$gender','$tel')")
 			 {
 			     if ($conn->query($sqlInsert) === TRUE) {
@@ -29,16 +32,25 @@ $error_message="";
                                 } else {
                                     echo "Error: " . $sqlInsert . "<br>" . $conn->error;
                                         }
-			     //header("location: index.php");
+			     header("location: index.php");
 		         }
 		         else
 		         {
-		              $error_message="Data Filed invalid";
+		              $error_message=3;
 		         }
 		   }
 }
-if($error_message !="")
-{
-    echo $error_message;
+if ($error_id == 0) {
+    $_SESSION["error_message"] = "Cadastro feito com sucesso!!";
+    $_SESSION["error_color"] = "green";
+} elseif ($error_id == 1) {
+    $_SESSION["error_message"] = "As senhas não combinam.";
+    $_SESSION["error_color"] = "";
+} elseif ($error_id == 2) {
+    $_SESSION["error_message"] = "Login já está em uso!";
+    $_SESSION["error_color"] = "";
+} else {
+    $_SESSION["error_message"] = "Dado inserido inválido";
+    $_SESSION["error_color"] = "";
 }
 ?>
