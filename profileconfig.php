@@ -24,7 +24,8 @@
     </style>
     </head>
     <body>
-        <div class="w3-display-container w3-mobile w3-text-purple" style="height:70%;">
+        <?php include(HEADER_TEMPLATE); ?>
+        <div class="w3-display-container w3-purple w3-mobile" style="height:70%;">
                 <div class="w3-display-topmiddle">
                 <table>
                     <tr>
@@ -59,9 +60,7 @@
             </div>
             <div class="w3-row w3-center">
                     <div class="w3-half">
-                    <form method="post" action="modificar.php">
-                    <p><button class="w3-button w3-yellow w3-round-xxlarge w3-margin" style="width:50%" type="submit">MODIFICAR INFORMAÇÕES</button></p>
-                    </form>
+                    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-yellow w3-round-xxlarge">MODIFICAR</button></p>
                     </div> 
                     <div class="w3-half">
                     <form method="post" action="deletar.php">
@@ -69,6 +68,56 @@
                     </form>
                     </div>
             </div>
+        <div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-yellow">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Modificar conta</h1>
+    </div>
+    <div class="w3-center w3-card-4 w3-padding-16">
+       
+      <p>Faça a mudança desejada aqui.</p>
+      <div class="w3-row">
+      <form method="post" action="modificar.php">
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>Nome:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="nome" type="text" value="<?php echo $nomeUser;  ?>" placeholder="Insira seu nome aqui">
+          </div>
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>E-mail:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="email" type="email" value="<?php echo $emailUser   ?>" placeholder="Insira seu e-mail aqui">
+          </div>
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>Senha:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="password" type="password" value="<?php echo $senha  ?>" placeholder="Insira sua senha aqui">
+          </div>
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>Gênero:</b></h4>
+              <select class="w3-select w3-left w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="gender">
+              <option value="" disabled selected>Escolha seu gênero</option>
+              <option value="masc">Masculino</option>
+              <option value="fem">Feminino</option>
+              <option value="outr">Outro</option>
+              </select>
+          </div>
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>CEP:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:95%" name="cep" type="text" value="<?php echo $cepUser  ?>" placeholder="Insira seu CEP aqui">
+          </div>
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>Endereço:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="enderecotxt" type="text" value="<?php echo $enderecoUser  ?>" placeholder="Insira seu endereço aqui">
+          </div>
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>Telefone:</b></h4>
+              <input class="w3-input w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="tel" type="text" value="<?php echo $userTelefone  ?>" placeholder="Insira seu telefone aqui">
+          </div>
+          </div>
+          <div class="w3-center w3-padding-16"><button class="w3-button w3-yellow w3-round-xxlarge" style="width:50%" type="submit">Modificar</button></div>
+      </form>
+    </div>
+  </div>
+</div>
     </body>
 </html>
     

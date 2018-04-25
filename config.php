@@ -35,6 +35,10 @@ if (!defined('TRATAMENTOREGISAPI'))
 if (!defined('TRATAMENTOLOGINAPI'))
     define('TRATAMENTOLOGINAPI', ABSPATH . 'inc/tratamentologin.php');
 
+/**Caminho para o arquivo de tratamento de entrada para a modificação **/
+if (!defined('TRATAMENTOMODIFICAPI'))
+    define('TRATAMENTOMODIFICAPI', ABSPATH . 'inc/tratamentomodificar.php');
+
 /*Caminho para o arquivo de retirada de dados do banco de dados */
 if (!defined('OUTPUTDATA'))
     define('OUTPUTDATA', ABSPATH . 'inc/output.php');
