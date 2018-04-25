@@ -93,7 +93,7 @@
           </div>
           <div class="w3-half w3-text-yellow">
               <h4 class="w3-left"><b>Gênero:</b></h4>
-              <select class="w3-select w3-left w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="gender">
+              <select class="w3-select w3-left w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" required="" style="width:90%" name="gender">
               <option value="" disabled selected>Escolha seu gênero</option>
               <option value="masc">Masculino</option>
               <option value="fem">Feminino</option>

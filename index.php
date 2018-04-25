@@ -43,7 +43,7 @@
       <?php }?>
       <?php }?>
   <div class="w3-display-middle w3-jumbo">
-      <h1>logo</h1>
+      <img src="images/logo.jpg" alt="Norway">
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
     <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-purple w3-round-xxlarge">login</button></p>
