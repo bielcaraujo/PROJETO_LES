@@ -112,6 +112,9 @@
               <h4 class="w3-left"><b>Telefone:</b></h4>
               <input class="w3-input w3-padding-16 w3-border w3-border-yellow w3-round-xxlarge" style="width:90%" name="tel" type="text" value="<?php echo $userTelefone  ?>" placeholder="Insira seu telefone aqui">
           </div>
+          <div class="w3-half w3-text-yellow">
+              <h4 class="w3-left"><b>Meus Jogos:</b></h4>
+          </div>
           </div>
           <div class="w3-center w3-padding-16"><button class="w3-button w3-yellow w3-round-xxlarge" style="width:50%" type="submit">Modificar</button></div>
       </form>

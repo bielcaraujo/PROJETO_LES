@@ -75,7 +75,7 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Bem vindo ao gameet!</strong>
+              <strong>Bem vindo ao Gameet!</strong>
             </h1>
             <hr>
           </div>

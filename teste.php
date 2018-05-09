@@ -1,4 +1,5 @@
 <?php
+include ('tratamentojogo.php');
 include ('tratamento.php');
 echo $name . ' ';
 echo $loginUser . ' ';
@@ -8,5 +9,8 @@ echo $gender . ' ';
 echo $cep . ' ';
 echo $tel . ' ';
 echo $endereco . ' ';
+echo $nvconhecimento . ' ';
+echo $nomejogo . ' ';
+echo $idjogo . ' ';
 ?>
 
