@@ -37,6 +37,9 @@
 <!--===============================================================================================-->
 </head>
 <body>
+    <?php
+        $db = open_database();
+        ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Gameet</a>
