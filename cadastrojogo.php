@@ -37,6 +37,9 @@
 <!--===============================================================================================-->
 </head>
 <body>
+    <?php
+        $db = open_database();
+        ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Gameet</a>
@@ -58,24 +61,24 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+                    <form class="contact100-form validate-form" method="POST" action="insertjogo.php">
 				<span class="contact100-form-title">
 					Cadastrar Jogo
 				</span>
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Por favor entre com o nome do jogo">
 					<span class="label-input100">Nome do jogo *</span>
-					<input class="input100" type="text" name="name" placeholder="Entre com o nome do jogo">
+					<input class="input100" type="text" name="gamename" placeholder="Entre com o nome do jogo">
 				</div>
 
 				<div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">Tipos de jogos *</span>
 					<div>
-						<select class="js-select2" name="service">
-							<option>MOBA</option>
-							<option>RPG</option>
-							<option>MMO</option>
-							<option>FPS</option>
+						<select class="js-select2" name="gametype">
+							<option value="MOBA">MOBA</option>
+							<option value="RPG">RPG</option>
+							<option value="MMO">MMO</option>
+							<option value="FPS">FPS</option>
                             <option>Esporte</option>
                             <option>Outro</option>
 						</select>
@@ -86,11 +89,11 @@
                 <div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">Plataforma *</span>
 					<div>
-						<select class="js-select2" name="service">
-							<option>PC</option>
-							<option>Playstation</option>
-							<option>XBOX</option>
-							<option>NINTENDO</option>
+						<select class="js-select2" name="platform">
+							<option value="PC">PC</option>
+							<option value="Playstation">Playstation</option>
+							<option value="Xbox">XBOX</option>
+							<option value="Nitendo">NINTENDO</option>
                             <option>RL (real life)</option>  
 						</select>
 						<div class="dropDownSelect2"></div>
@@ -100,11 +103,11 @@
                      <div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">Nivel de conhecimento *</span>
 					<div>
-						<select class="js-select2" name="service">
-							<option>Interessado</option>
-							<option>Iniciante</option>
-							<option>Intermediario</option>
-							<option>Avançado</option>
+						<select class="js-select2" name="lvl">
+							<option value="Interessado">Interessado</option>
+							<option value="Iniciante">Iniciante</option>
+							<option value="Intermediario">Intermediario</option>
+							<option value="Experiente">Experiente</option>
 						</select>
 						<div class="dropDownSelect2"></div>
 					</div>
