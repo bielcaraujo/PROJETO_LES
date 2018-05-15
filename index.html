@@ -117,27 +117,55 @@
                               <div class="row">
                               <div class="col">
                                   <h4><b>Nome:</b></h4>
-                                  <input class="form-control" name="nome" type="text" placeholder="Insira seu nome aqui">
+                                  <input class="form-control" id="form-cadastro-usuario-nome" name="nome" type="text" placeholder="Insira seu nome aqui">
                               </div>
                               <div class="col">
-                                  <h4><b>E-mail:</b></h4>
-                                  <input class="form-control" name="email" type="email" placeholder="Insira seu e-mail aqui">
+                                  <h4><b>Idade:</b></h4>
+                                  <input class="form-control" id="form-cadastro-usuario-idade" name="idade" type="number" placeholder="Insira sua idade aqui">
                               </div>
                               </div>      
                               <div class="row">
                               <div class="col">
                                   <h4><b>Usuário:</b></h4>
-                                  <input class="form-control" class="form-control" name="username2" type="text" placeholder="Insira seu usuário aqui">
+                                  <input class="form-control" class="form-control" id="form-cadastro-usuario-username" name="username2" type="text" placeholder="Insira seu usuário aqui">
                               </div>
                               <div class="col">
                                   <h4><b>Senha:</b></h4>
-                                  <input class="form-control" name="password" type="password" placeholder="Insira sua senha aqui">
+                                  <input class="form-control" name="password" id="form-cadastro-usuario-senha" type="password" placeholder="Insira sua senha aqui">
                               </div>
                               </div>      
                               <div class="row">
                               <div class="col">
-                                  <h4 ><b>Repetir senha:</b></h4>
-                                  <input class="form-control" name="password_repeat" type="password" placeholder="Insira sua senha novamente aqui">
+                                  <h4 ><b>Estado:</b></h4>
+                                  <select class="form-control" id="form-cadastro-usuario-estado" name="estados-brasil">
+                                                            <option value="AC">Acre</option>
+                                                            <option value="AL">Alagoas</option>
+                                                            <option value="AP">Amapá</option>
+                                                            <option value="AM">Amazonas</option>
+                                                            <option value="BA">Bahia</option>
+                                                            <option value="CE">Ceará</option>
+                                                            <option value="DF">Distrito Federal</option>
+                                                            <option value="ES">Espírito Santo</option>
+                                                            <option value="GO">Goiás</option>
+                                                            <option value="MA">Maranhão</option>
+                                                            <option value="MT">Mato Grosso</option>
+                                                            <option value="MS">Mato Grosso do Sul</option>
+                                                            <option value="MG">Minas Gerais</option>
+                                                            <option value="PA">Pará</option>
+                                                            <option value="PB">Paraíba</option>
+                                                            <option value="PR">Paraná</option>
+                                                            <option value="PE">Pernambuco</option>
+                                                            <option value="PI">Piauí</option>
+                                                            <option value="RJ">Rio de Janeiro</option>
+                                                            <option value="RN">Rio Grande do Norte</option>
+                                                            <option value="RS">Rio Grande do Sul</option>
+                                                            <option value="RO">Rondônia</option>
+                                                            <option value="RR">Roraima</option>
+                                                            <option value="SC">Santa Catarina</option>
+                                                            <option value="SP">São Paulo</option>
+                                                            <option value="SE">Sergipe</option>
+                                                            <option value="TO">Tocantins</option>
+                                        </select>
                               </div>
                               <div class="col">
                                   <h4 ><b>Gênero:</b></h4>
@@ -151,26 +179,12 @@
                               </div>
                               <div class="row">
                               <div  class="col">
-                                  <h4 ><b>CEP:</b></h4>
-                                  <input class="form-control" name="cep" type="text" placeholder="Insira seu CEP aqui">
+                                  <h4 ><b>cidade:</b></h4>
+                                  <input class="form-control" name="cidade" id="form-cadastro-usuario-cidade" type="text" placeholder="Insira sua cidade aqui">
+                                  </br>
                               </div>
-                              <div  class="col">
-                                  <h4 ><b>Endereço:</b></h4>
-                                  <input  class="form-control" name="enderecotxt" type="text" placeholder="Insira seu endereço aqui">
-                              </div>
-                              </div>      
-                              <div class="row">
-                              <div class="col">
-                                  <h4><b>Número:</b></h4>
-                                  <input class="form-control" name="endereconum" type="text" placeholder="Insira o número da sua casa aqui">
-                              </div>
-                              <div class="col">
-                                  <h4 ><b>Telefone:</b></h4>
-                                  <input class="form-control" name="tel" type="text" placeholder="Insira seu telefone aqui">
-                              </div>
-                              </div>       
-                         </div>
-                          <div class="row">
+                                 
+                         </div>   
                           <div class="col">
                           <button type="button" style="width:60%" class="btn btn-secondary" data-dismiss="modal">fechar</button>
                           </div>
@@ -179,7 +193,6 @@
                           </div>      
                           </div>      
                           </form>
-                        </br>
                       </div>
                     </div>
                   </div>
@@ -195,20 +208,21 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Sobre o grupo</h2>
             <hr class="my-4">
-              <p class="mb-5">Back-end: Gabriel Colombo Araujo</br>
+              <p class="mb-5">Back-end:  João Sebastian</br>
             Front-end: Danilo Pelozone Lima </br>
-            Não sei ainda: João Sebastian</p>
+            </p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 ml-auto text-center">
             <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
+            <p>13-98221-3285</p>
+            <p>13-99754-0139</p>
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+              <a href="mailto:danilo.pelozone@gmail.com">danilo.pelozone@gmail.com</a>
             </p>
           </div>
         </div>
