@@ -3,7 +3,6 @@
 use Classes\Database;
 
 function getMyUsuarioJogo() {
-    session_start();
     if($_SESSION) {
         $usuario = $_SESSION["id"];
         $db = new Database();
@@ -21,7 +20,6 @@ function getMyUsuarioJogo() {
 }
 
 function getUsuarioJogoFrom($id) {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
@@ -39,7 +37,6 @@ function getUsuarioJogoFrom($id) {
 }
 
 function insertUsuarioJogo($jogo, $conhecimento, $tipo) {
-    session_start();
     $db = new Database();
     $connection = $db->$mysqli;
     $insert = $connection->prepare("INSERT INTO USUARIO_JOGO(cd_usuario, cd_jogo, ds_conhecimento, nm_tipo) VALUES(?, ?, ?, ?)");
@@ -57,7 +54,6 @@ function insertUsuarioJogo($jogo, $conhecimento, $tipo) {
 }
 
 function updateUsuarioJogo($id_jogo, $conhecimento, $tipo) {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
@@ -77,7 +73,6 @@ function updateUsuarioJogo($id_jogo, $conhecimento, $tipo) {
 }
 
 function deleteUsuarioJogo($id_jogo) {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;

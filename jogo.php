@@ -3,7 +3,6 @@
 use Classes\Database;
 
 function getAllJogo() {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
@@ -20,7 +19,6 @@ function getAllJogo() {
 }
 
 function getJogo($id) {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
@@ -55,7 +53,6 @@ function insertJogo($nome, $plataforma) {
 }
 
 function updateJogo($id, $nome, $plataforma) {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;

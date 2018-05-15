@@ -11,8 +11,9 @@ function login($data) {
     if($fetch = $result->fetch_assoc()) {
         $retorno["status"] = "success";
         $retorno["tipo"] = $fetch["cd_tipo"];
+        
         //criar session
-        session_start();
+        $retorno["session"] = session_id();
         $_SESSION["id"] = $fetch["cd_usuario"];
         $_SESSION["usuario"] = $fetch["nm_usuario"];
         $_SESSION["tipo"] = $fetch["cd_tipo"];

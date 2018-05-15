@@ -3,7 +3,6 @@
 use Classes\Database;
 
 function getAllUsuario() {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
@@ -20,7 +19,6 @@ function getAllUsuario() {
 }
 
 function getUsuario($id) {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
@@ -55,7 +53,6 @@ function insertUsuario($nome, $idade, $tipo, $login, $senha, $genero, $desc) {
 }
 
 function updateUsuario($id, $nome, $idade, $tipo, $login, $senha, $genero, $desc) {
-    session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
