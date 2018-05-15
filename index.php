@@ -57,19 +57,24 @@ $app->post('/login', function (Request $request, Response $response, array $args
     return $response;
 });
 
+$app->get('/logout', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-type', 'application/json');
+    include 'login.php';
+    $response->withJson(logout());
+});
 //jogo
 
 $app->get('/jogo', function (Request $request, Response $response, array $args) {
     $response = $response->withHeader('Content-Type', 'application/json');
     include 'jogo.php';
-    $response->withJson(getAllUsuario());
+    $response->withJson(getAllJogo());
     return $response;
 });
 
 $app->get('/jogo/{id}', function (Request $request, Response $response, array $args) {
     $response = $response->withHeader('Content-Type', 'application/json');
     include 'jogo.php';
-    $response->withJson(getUsuario($args['id']));
+    $response->withJson(getJogo($args['id']));
     return $response;
 });
 
@@ -77,7 +82,54 @@ $app->post('/jogo', function (Request $request, Response $response, array $args)
     $response->withHeader('Content-type', 'application/json');
     include 'jogo.php';
     $data = $request->getParsedBody();
-    $response->withJson(insertJogo($data["nome"], $data["idade"], $data["tipo"], $data["login"], $data["senha"], $data["genero"], $data["desc"]));
+    $response->withJson(insertJogo($data["nome"], $data["plataforma"]));
+    return $response;
+});
+
+$app->post('/jogo/update', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-type', 'application/json');
+    include 'jogo.php';
+    $data = $request->getParsedBody();
+    $response->withJson(updateJogo($data["id"], $data["nome"], $data["plataforma"]));
+    return $response;
+});
+
+//usuario jogo
+$app->get('/usuario_jogo', function (Request $request, Response $response, array $args) {
+    $response = $response->withHeader('Content-Type', 'application/json');
+    include 'usuario_jogo.php';
+    $response->withJson(getMyUsuarioJogo());
+    return $response;
+});
+
+$app->get('/usuario_jogo/{id}', function (Request $request, Response $response, array $args) {
+    $response = $response->withHeader('Content-Type', 'application/json');
+    include 'usuario_jogo.php';
+    $response->withJson(getUsuarioJogoFrom($args['id']));
+    return $response;
+});
+
+$app->post('/usuario_jogo', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-type', 'application/json');
+    include 'usuario_jogo.php';
+    $data = $request->getParsedBody();
+    $response->withJson(insertUsuarioJogo($data["jogo"], $data["conhecimento"], $data["tipo"]));
+    return $response;
+});
+
+$app->post('/usuario_jogo/update', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-type', 'application/json');
+    include 'usuario_jogo.php';
+    $data = $request->getParsedBody();
+    $response->withJson(updateUsuarioJogo($data["id"], $data["conhecimento"], $data["tipo"]));
+    return $response;
+});
+
+$app->post('/usuario_jogo/delete', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-type', 'application/json');
+    include 'usuario_jogo.php';
+    $data = $request->getParsedBody();
+    $response->withJson(deleteUsuarioJogo($data["id"]));
     return $response;
 });
 

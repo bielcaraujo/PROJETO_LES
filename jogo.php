@@ -2,16 +2,16 @@
 
 use Classes\Database;
 
-function getAllUsuario() {
+function getAllJogo() {
     session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
-        $result = $connection->query("SELECT * FROM USUARIO");
+        $result = $connection->query("SELECT * FROM JOGO");
 
         $array = array();
         while($fetch = $result->fetch_assoc()) {
-            $array[$fetch["cd_usuario"]] = $fetch;
+            $array[$fetch["cd_jogo"]] = $fetch;
         }
         $result->free();
         $connection->close();
@@ -19,16 +19,16 @@ function getAllUsuario() {
     }
 }
 
-function getUsuario($id) {
+function getJogo($id) {
     session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
-        $result = $connection->query("SELECT * FROM USUARIO WHERE cd_usuario = '$id'");
+        $result = $connection->query("SELECT * FROM JOGO WHERE cd_jogo = '$id'");
 
         $array = array();
         while($fetch = $result->fetch_assoc()) {
-            $array[$fetch["cd_usuario"]] = $fetch;
+            $array[$fetch["cd_jogo"]] = $fetch;
         }
 
         $result->free();
@@ -37,12 +37,12 @@ function getUsuario($id) {
     }
 }
 
-function insertUsuario($nome, $idade, $tipo, $login, $senha, $genero, $desc) {
+function insertJogo($nome, $plataforma) {
     $db = new Database();
     $connection = $db->$mysqli;
-    $insert = $connection->prepare("INSERT INTO USUARIO(nm_usuario, cd_idade, cd_tipo, cd_login, cd_senha, nm_genero, ds_usuario) VALUES(?, ?, ?, ?, ?, ?, ?)");
+    $insert = $connection->prepare("INSERT INTO JOGO(nm_jogo, nm_plataforma) VALUES(?, ?)");
     
-    $insert->bind_param("sisssss", $nome, $idade, $tipo, $login, $senha, $genero, $desc);
+    $insert->bind_param("ss", $nome, $plataforma);
     if($insert->execute()) {
         $connection->close();
         $retorno["status"] = "SUCCESS";        
@@ -54,14 +54,14 @@ function insertUsuario($nome, $idade, $tipo, $login, $senha, $genero, $desc) {
     }
 }
 
-function updateUsuario($id, $nome, $idade, $tipo, $login, $senha, $genero, $desc) {
+function updateJogo($id, $nome, $plataforma) {
     session_start();
     if($_SESSION) {
         $db = new Database();
         $connection = $db->$mysqli;
-        $insert = $connection->prepare("UPDATE USUARIO SET nm_usuario = ?, cd_idade = ?, cd_tipo = ?, cd_login = ?, cd_senha = ?, nm_genero = ?, ds_usuario = ? WHERE cd_usuario = '$id'");
+        $insert = $connection->prepare("UPDATE JOGO SET nm_jogo = ?, nm_plataforma = ? WHERE cd_jogo = '$id'");
     
-        $insert->bind_param("siissss", $nome, $idade, $tipo, $login, $senha, $genero, $desc);
+        $insert->bind_param("ss", $nome, $plataforma);
         if($insert->execute()) {
             $connection->close();
             $retorno["status"] = "SUCCESS";        

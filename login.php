@@ -7,7 +7,7 @@ function login($data) {
     $senha = $data["senha"];
     $db = new Database();
     $connection = $db->$mysqli;
-    $result = $connection->query("SELECT * FROM usuario WHERE cd_login = '{$login}' AND cd_senha = '{$senha}'");
+    $result = $connection->query("SELECT * FROM USUARIO WHERE cd_login = '{$login}' AND cd_senha = '{$senha}'");
     if($fetch = $result->fetch_assoc()) {
         $retorno["status"] = "success";
         $retorno["tipo"] = $fetch["cd_tipo"];
