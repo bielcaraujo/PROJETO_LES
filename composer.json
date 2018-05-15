@@ -1,11 +1,11 @@
 {
-    "name": "adalberto/restaur-app-server",
-    "description": "Servidor para o RestaurApp",
+    "name": "danilo/gameet",
+    "description": "Servidor gameet",
     "type": "project",
     "authors": [
         {
-            "name": "Adalberto",
-            "email": "adalberto.teixeirajr@outlook.com"
+            "name": "Danilo",
+            "email": "danilo.pelozone@gmail.com"
         }
     ],
     "require": {
