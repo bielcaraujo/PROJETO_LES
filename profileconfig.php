@@ -102,7 +102,7 @@
                 
                 <div class="wrap-input100 validate-input bg1">
 					<span class="label-input100">Cidade *</span>
-					<input class="input100" id="form-edit-usuario-nome" type="text" name="cidade" placeholder="Entre com sua cidade">
+					<input class="input100" id="form-edit-usuario-cidade" type="text" name="cidade" placeholder="Entre com sua cidade">
 				</div>
                 
                  <div class="wrap-input100 validate-input bg1">
@@ -121,16 +121,16 @@
 				</div>
                 
                 <div class="wrap-input100 validate-input bg1">
-					<span class="label-input100">E-mail *</span>
-					<input class="input100" id="form-edit-usuario-email" type="email" name="email" placeholder="Entre com seu e-mail">
+					<span class="label-input100">Desrição *</span>
+					<input class="input100" id="form-edit-usuario-desc" type="text" name="desc" placeholder="Entre com seu e-mail">
 				</div>
                 
                  <div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">Gênero *</span>
 					<div>
 				         <select class="js-select2" id="form-edit-usuario-genero" name="genero">
-                                <option value="Masculino">Masculino</option>
-                                <option value="Feminino">Feminino</option>
+                                <option value="Masc">Masculino</option>
+                                <option value="Fem">Feminino</option>
                              <option value="Outro">Outro</option>
                             </select>
 						<div class="dropDownSelect2"></div>
@@ -141,7 +141,7 @@
 					<button class="contact100-form-btn">
 						<span>
 							Atualizar
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							<i class="fa fa-long-arrow-right m-l-7" onclick="atualizarUsuario()" aria-hidden="true"></i>
 						</span>
 					</button>
 				</div>

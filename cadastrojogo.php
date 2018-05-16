@@ -60,13 +60,13 @@
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Por favor entre com o nome do jogo">
 					<span class="label-input100">Nome do jogo *</span>
-					<input class="input100" id="form-cadastro-jogo-nome" type="text" name="name" placeholder="Entre com o nome do jogo">
+					<input class="input100" id="form-cadastro-jogo-nome" type="text" name="nome" placeholder="Entre com o nome do jogo">
 				</div>
 
                 <div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">Plataforma *</span>
 					<div>
-						<select class="js-select2" id="form-cadastro-jogo-plataforma" name="service">
+						<select class="js-select2" id="form-cadastro-jogo-plataforma" name="plataforma">
 							<option value="pc">PC</option>
 							<option value="playstation">Playstation</option>
 							<option value="xbox">XBOX</option>
@@ -79,7 +79,7 @@
                 
                 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button onclick="cadastroJogo()" class="contact100-form-btn">
 						<span>
 							Cadastrar
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

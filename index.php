@@ -30,7 +30,7 @@ $app->post('/usuario', function (Request $request, Response $response, array $ar
     $response->withHeader('Content-type', 'application/json');
     include 'usuario.php';
     $data = $request->getParsedBody();
-    $response->withJson(insertUsuario($data["nome"], $data["idade"], $data["tipo"], $data["login"], $data["senha"], $data["genero"], $data["desc"]));
+    $response->withJson(insertUsuario($data["nome"], $data["idade"], $data["tipo"], $data["login"], $data["senha"], $data["genero"], $data["desc"], $data["estado"], $data["cidade"]));
     return $response;
 });
 
@@ -38,7 +38,7 @@ $app->post('/usuario/update', function (Request $request, Response $response, ar
     $response->withHeader('Content-type', 'application/json');
     include 'usuario.php';
     $data = $request->getParsedBody();
-    $response->withJson(updateUsuario($data["id"], $data["nome"], $data["idade"], $data["tipo"], $data["login"], $data["senha"], $data["genero"], $data["desc"]));
+    $response->withJson(updateUsuario($data["id"], $data["nome"], $data["idade"], $data["tipo"], $data["login"], $data["senha"], $data["genero"], $data["desc"], $data["estado"], $data["cidade"]));
     return $response;
 });
 
@@ -94,6 +94,15 @@ $app->post('/jogo/update', function (Request $request, Response $response, array
     $response->withJson(updateJogo($data["id"], $data["nome"], $data["plataforma"]));
     return $response;
 });
+
+$app->post('/jogo/delete', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-type', 'application/json');
+    include 'jogo.php';
+    $data = $request->getParsedBody();
+    $response->withJson(deleteJogo($data["id"]));
+    return $response;
+});
+
 
 //usuario jogo
 $app->get('/usuario_jogo', function (Request $request, Response $response, array $args) {

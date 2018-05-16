@@ -86,20 +86,20 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                            <form method="post" action="login.php">
+                            <form>
                                   <h4><b>Usuário</b></h4>
                                     <div class="form-group">
-                                        <input class="form-control" name="username" type="text" placeholder="Usuário">
+                                        <input class="form-control" id="form-inicio-login-user" name="login" type="text" placeholder="Usuário">
                                     </div>
                                   <h4><b>Senha</b></h4>
                                   <div>
-                                  <input class="form-control" type="password" placeholder="Senha" required name="password">
+                                  <input class="form-control" id="form-inicio-login-senha" type="senha" placeholder="Senha" required name="password">
                                   </div>
                             </form>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">fechar</button>
-                        <button type="button" class="btn btn-primary">Entrar</button>
+                        <button type="button"  onclick="login()" class="btn btn-primary">Entrar</button>
                       </div>
                     </div>
                   </div>
@@ -114,7 +114,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        <form method="post" action="insert.php">
+                        <form>
                               <div class="row">
                               <div class="col">
                                   <h4><b>Nome:</b></h4>
@@ -170,7 +170,7 @@
                               </div>
                               <div class="col">
                                   <h4 ><b>Gênero:</b></h4>
-                                  <select class="form-control" name="gender">
+                                  <select class="form-control" id="form-cadastro-usuario-genero" name="gender">
                                   <option value="" disabled selected>Escolha seu gênero</option>
                                   <option value="masc">Masculino</option>
                                   <option value="fem">Feminino</option>
@@ -191,7 +191,7 @@
                           </div>
                           </br>
                           <div class="col">      
-                          <button type="button" style="width:60%" class="btn btn-primary">Cadastrar-se</button>
+                          <button type="button" onclick="cadastroUsuario()" style="width:60%" class="btn btn-primary">Cadastrar-se</button>
                           </div>      
                           </div>      
                           </form>
@@ -240,11 +240,12 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="script.js"></script>
+
   </body>
 
 </html>

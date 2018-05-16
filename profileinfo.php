@@ -134,10 +134,10 @@
                         <th scope="col">Dummy</th>
                         <th scope="col">Dummy</th>
                         <th scope="col"> 
-                            <button class="contact100-form-btn" data-toggle="modal" data-target="#ModalEditar">
+                            <button class="contact100-form-btn" onclick="window.location.href = 'https://gameet.000webhostapp.com/profileinfo.php'";>
                                 <span>
-                                    Editar
-                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                    Editar    
+                                    <i class="fa fa-long-arrow-right m-l-7"  aria-hidden="true"></i>
                                 </span>
 					       </button></th>
                         <th scope="col"> 

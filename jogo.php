@@ -70,3 +70,29 @@ function updateJogo($id, $nome, $plataforma) {
         }
     }
 }
+
+function deleteJogo($id) {
+    if($_SESSION) {
+        $db = new Database();
+        $connection = $db->$mysqli;
+        $deleteUsuarioJogo = $connection->prepare("DELETE FROM USUARIO_JOGO WHERE cd_jogo = $id");
+        if($deleteUsuarioJogo->execute()) {
+            $insert = $connection->prepare("DELETE FROM JOGO WHERE cd_jogo = $id");
+    
+            if($insert->execute()) {
+                $connection->close();
+                $retorno["status"] = "SUCCESS";        
+                return $retorno;
+            }
+        
+            else {
+                $retorno["status"] = "FAIL";
+                return $retorno;
+            }
+        }
+        else {
+            $retorno["status"] = "FAIL";
+            return $retorno;
+        }
+    }
+}
